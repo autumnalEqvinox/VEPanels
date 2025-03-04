@@ -5,6 +5,10 @@ import sys
 
 page_count = int(requests.get("https://api.deconreconstruction.com/pages/count?story.name=vast-error&published_at_null=false").content)#-227
 
+size = page_count * 0.242149073023
+
+print(f"Estimated Disk Space Required: {round(size)} MB")
+os.system('pause')
 
 def get_script_folder():
     # path of main .py or .exe when converted with pyinstaller
@@ -57,7 +61,7 @@ for i in range(1, page_count+1):
         else:
             print(f"Failed to download image from URL: {url}")
 
-print(f"Panel downloading has complete, panels downloaded to {get_script_folder()}")
+print(f"Panel downloading has complete, panels downloaded to {get_script_folder()}\\downloaded panels.")
 os.system('pause')
 
 
